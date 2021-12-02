@@ -192,7 +192,8 @@ select * from Borrower;
 create table Book_Loans (
 BookID int not null constraint fk_Book_ID_Book_Loans foreign key references Books(BooksID) on update cascade on delete cascade,
 BranchID int not null constraint fk_Branch_ID_Book_loans foreign key references Library_Branch(BranchID) on update cascade on delete cascade,
-CardNo int not null constraint fk_Branch_ID_Card_Loans foreign key references Borrower(cardNo) on update cascade on delete cascade,
+--Error first cardno doesnot exist--Fixed by replacing cardno to CardNo (Now it has refrence to borrower table)
+CardNo int not null constraint fk_Branch_ID_Card_Loans foreign key references Borrower(CardNo) on update cascade on delete cascade,
 DateOut date not null,
 DateDue date not null
 );
@@ -254,6 +255,14 @@ Exec dbo_return_Number_of_copies_by_each_Library_branch;
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-select * from Borrower;
+-----------Stored procedure-------- Retrieve the names of all borrowers who do not have any books checked out------------------------------------------------------
 
-select * from Book_Loans;
+EXEC dbo_get_barrowers_name_have_not_checkout_library;
+
+
+   /*select a.Name
+   from Borrower a
+   inner join Book_Loans b on b.CardNo = a.CardNo
+   where DateDue < CONVERT(date,GETDATE());
+   */
+
