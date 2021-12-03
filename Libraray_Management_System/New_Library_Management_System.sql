@@ -186,6 +186,10 @@ insert into Book_Copies (BookID, BranchID, Number_Of_Copies)
 (19,1002,2),
 (20,1001,8)
 ;
+--Inserting for books_Copies query A:
+insert into Book_Copies (BookID, BranchID, Number_Of_Copies)
+					Values
+(9,1005,4);
 
 select * from Book_Copies;
 
