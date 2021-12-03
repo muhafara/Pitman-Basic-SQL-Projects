@@ -247,7 +247,7 @@ order by Book_Authors.AurthorName;
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
------------------------------Stored procedure-----How may copies of the book titled "The lost tribe" are pwned by the library branch whose name is sharpstown----------------
+-----------------------------Stored procedure-----How may copies of the book titled "The lost tribe" are owned by the library branch whose name is sharpstown----------------
 --Stoed procedure to check check number of copies book titled 'The last tribe'in branch 'shapstown'
 -- As No book titled as mention in the branch was found so number of copies is 0
 EXEC dbo_Number_of_Copies_owned_by_lib_branch;
